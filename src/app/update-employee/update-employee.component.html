@@ -1,0 +1,86 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="create-emp">
+  <div class="card">
+    <h5 class="card-header info-color white-text text-center py-4">
+      <strong>Update User</strong>
+    </h5>
+
+    <div class="card-body px-lg-5" fxLayoutAlign="center center">
+      <form
+        [formGroup]="empForm"
+        (ngSubmit)="onSubmit()"
+        class="text-center"
+        style="color: #757575;"
+        action="#!"
+      >
+        <div class="md-form mt-3">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="Name"
+            [(ngModel)]="user.employee_name"
+          />
+        </div>
+
+        <div
+          *ngIf="
+            (empForm.get('name').touched || submitted) &&
+            empForm.get('name').errors
+          "
+        >
+          <p *ngIf="empForm.get('name').errors.required">
+            This field is required
+          </p>
+        </div>
+
+        <div class="md-form">
+          <input
+            type="number"
+            min="0"
+            class="form-control"
+            formControlName="age"
+            placeholder="Age"
+            [(ngModel)]="user.employee_age"
+          />
+        </div>
+
+        <div
+          *ngIf="
+            (empForm.get('age').touched || submitted) &&
+            empForm.get('age').errors
+          "
+        >
+          <p *ngIf="empForm.get('age').errors.required">
+            This field is required
+          </p>
+        </div>
+
+        <div class="md-form">
+          <input
+            type="number"
+            min="0"
+            class="form-control"
+            formControlName="salary"
+            placeholder="Salary"
+            [(ngModel)]="user.employee_salary"
+          />
+        </div>
+
+        <div
+          *ngIf="
+            (empForm.get('salary').touched || submitted) &&
+            empForm.get('salary').errors
+          "
+        >
+          <p *ngIf="empForm.get('salary').errors.required">
+            This field is required
+          </p>
+        </div>
+
+        <button type="submit" class="btn btn-primary z-depth-0 my-4">
+          Update
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

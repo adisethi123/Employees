@@ -1,0 +1,28 @@
+.login-form {
+  background-image: url("../../assets/images/yellow-and-and-blue-colored-pencils-1762851.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+}
+
+.login-button {
+  margin-top: 30px;
+  width: 50%;
+}
+
+mat-card {
+  width: 25%;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.login-logo{
+  height: 20%;
+  width: 60%;
+  margin: 10px 0px 20px 0px;
+}

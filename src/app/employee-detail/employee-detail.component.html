@@ -1,0 +1,29 @@
+<div fxLayoutAlign="center center" fxLayout="column" class="h-100">
+  <div class="card" style="width: 18rem;">
+    <div class="card-header" fxLayoutAlign="center center" fxLayout="column">
+      User Detail
+    </div>
+    <div fxLayoutAlign="center center">
+      <img
+        class="card-img-top h-50 w-50"
+        src="../../assets/images/image.png"
+        alt="Card image cap"
+      />
+    </div>
+    <div class="card-body" fxLayoutAlign="center center" fxLayout="column">
+      <p><b>ID</b> : {{ user.id }}</p>
+      <p><b>Name</b> : {{ user.employee_name }}</p>
+      <p><b>Age</b> : {{ user.employee_age }}</p>
+      <p><b>Salary</b> : {{ user.employee_salary }}</p>
+    </div>
+  </div>
+  <div>
+    <button
+      type="button"
+      [routerLink]="['/employees']"
+      class="btn btn-primary mt-2"
+    >
+      Back To Lists
+    </button>
+  </div>
+</div>

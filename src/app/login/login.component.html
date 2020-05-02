@@ -1,0 +1,66 @@
+<div class="login-form" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card fxLayoutAlign="center center">
+    <mat-card-content>
+      <div fxLayoutAlign="center center">
+        <img src="../../assets/images/login.png" alt="Login" class="login-logo" />
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input
+              matInput
+              placeholder="pat@example.com"
+              type="email"
+              formControlName="email"
+              required
+            />
+            <div
+              *ngIf="
+                (loginForm.get('email').touched || submitted) &&
+                !loginForm.get('email').valid
+              "
+            >
+              <mat-error *ngIf="loginForm.get('email').errors.required"
+                >This field is required</mat-error
+              >
+              <mat-error *ngIf="loginForm.get('email').errors.email"
+                >Email must be a valid email address</mat-error
+              >
+            </div>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input
+              matInput
+              type="password"
+              placeholder="password"
+              formControlName="password"
+              required
+            />
+            <div
+              *ngIf="
+                (loginForm.get('password').touched || submitted) &&
+                loginForm.get('password').errors
+              "
+            >
+              <mat-error *ngIf="loginForm.get('password').errors.required"
+                >Password is required</mat-error
+              >
+            </div>
+          </mat-form-field>
+
+          <button
+            class="login-button"
+            mat-raised-button
+            color="primary"
+            type="submit"
+          >
+            LOGIN
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
